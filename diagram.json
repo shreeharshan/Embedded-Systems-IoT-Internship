@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -291, "left": -525.2, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -297.6,
+      "left": -119.96,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -345.3,
+      "left": -303,
+      "attrs": { "humidity": "73", "temperature": "63" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -216.85,
+      "left": -451.2,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -272.4,
+      "left": -476.2,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -314.4,
+      "left": -382.2,
+      "attrs": { "volume": "1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -512,
+      "left": -503.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "bb1:12t.c", "esp:32", "blue", [ "v0", "h249.6", "v38.4" ] ],
+    [ "bb1:5t.c", "bb1:bn.4", "black", [ "v0" ] ],
+    [ "bb1:23t.e", "bb1:bp.21", "#8f4814", [ "v0" ] ],
+    [ "bb1:bp.25", "esp:5V", "#8f4814", [ "v0" ] ],
+    [ "bb1:26t.e", "bb1:bn.23", "black", [ "v0" ] ],
+    [ "bb1:bn.23", "esp:GND.1", "black", [ "v0" ] ],
+    [ "bb1:24t.d", "esp:25", "gold", [ "v0" ] ],
+    [ "bb1:17t.e", "esp:27", "violet", [ "v0" ] ],
+    [ "bb1:16t.e", "bb1:bn.13", "black", [ "v0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h508.8", "v278.6" ] ],
+    [ "esp:22", "lcd1:SCL", "green", [ "h9.6", "v-105.6", "h-528", "v-96" ] ],
+    [ "lcd1:GND", "bb1:tn.2", "black", [ "h-48", "v172.8", "h76.8" ] ],
+    [ "bb1:tn.1", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "lcd1:VCC", "bb1:tp.3", "red", [ "h-57.6", "v144.1", "h96" ] ],
+    [ "r1:1", "bb1:6t.d", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:12t.d", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:16t.b", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:17t.b", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:6t.b", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:5t.b", "", [ "$bb" ] ],
+    [ "bb1:tp.4", "bb1:bp.5", "#8f4814", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:23t.b", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:24t.b", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:25t.b", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:26t.b", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
