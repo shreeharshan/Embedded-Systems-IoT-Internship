@@ -5,7 +5,7 @@ This repository contains the tasks completed during my **Embedded Systems & IoT 
 ## Repository Structure
 
 - 📁 Task-1 – Smart Temperature and Humidity Monitoring System
-- 📁 Task-2
+- 📁 Task-2 - Automatic Light Detection System using ESP32 & LDR
 - 📁 Task-3
 - 📁 Task-4
 
