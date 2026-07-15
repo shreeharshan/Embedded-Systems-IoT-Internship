@@ -1,9 +1,31 @@
-# Task 3 – Smart Automatic Lighting System
+# Task 3 – Upgraded Smart Automatic Lighting System with IoT
 
-## Objective
-Develop an IoT-based automatic lighting system using an ESP32 and an LDR sensor. The system automatically controls an LED based on ambient light intensity and provides real-time monitoring through the Blynk IoT platform.
+## Overview
+
+This project is an enhanced version of the **Task 2 – Automatic Light Detection System**.
+
+In Task 2, the ESP32 monitored ambient light using an LDR sensor and automatically controlled an LED based on a predefined threshold.
+
+For Task 3, the project has been upgraded by integrating **Blynk IoT**, enabling real-time cloud monitoring through both web and mobile dashboards.
+
+---
+
+## Enhancements Over Task 2
+
+The following features were added to the previous project:
+
+- IoT connectivity using Blynk Cloud
+- Live monitoring of LDR sensor values
+- Real-time Environment Status (BRIGHT/DARK)
+- LED status monitoring
+- Web Dashboard for remote monitoring
+- Mobile Dashboard for remote monitoring
+- Manual Override switch through the Blynk dashboard
+
+---
 
 ## Components Used
+
 - ESP32
 - LDR Sensor Module
 - LED
@@ -13,47 +35,50 @@ Develop an IoT-based automatic lighting system using an ESP32 and an LDR sensor.
 - Blynk IoT Platform
 - Wokwi Simulator
 
-## Working Principle
+---
+
+## Working
+
 The ESP32 continuously reads the light intensity from the LDR sensor.
 
-- If the LDR value is below the threshold, the environment is considered DARK and the LED turns ON.
-- If the LDR value is above the threshold, the environment is considered BRIGHT and the LED turns OFF.
+- If the light intensity falls below the threshold, the environment is detected as **DARK** and the LED turns ON.
+- If the light intensity rises above the threshold, the environment is detected as **BRIGHT** and the LED turns OFF.
 
-The sensor value and device status are displayed on:
-- Serial Monitor
+The ESP32 also sends the following information to the Blynk Cloud:
+
+- LDR Value
+- Environment Status
+- LED Status
+
+Users can monitor the system remotely using both the Blynk Web Dashboard and the Blynk Mobile App.
+
+---
+
+## Blynk Dashboard
+
+### Datastreams
+
+| Virtual Pin | Function |
+|-------------|----------|
+| V0 | LDR Value |
+| V1 | Environment Status |
+| V2 | LED Status |
+| V3 | Manual Override |
+
+---
+
+## Project Features
+
+- Automatic light detection
+- Automatic LED control
+- ESP32 Wi-Fi connectivity
+- Real-time cloud monitoring
 - Blynk Web Dashboard
 - Blynk Mobile Dashboard
+- Manual Override mode
+- Serial Monitor output
 
-## Features
-- Automatic lighting control
-- Real-time LDR monitoring
-- Web dashboard monitoring
-- Mobile dashboard monitoring
-- ESP32 Wi-Fi connectivity
-- Cloud-based IoT using Blynk
-
-## Blynk Datastreams
-
-| Virtual Pin | Purpose |
-|-------------|---------|
-| V0 | LDR Value |
-| V1 | Environment (DARK/BRIGHT) |
-| V2 | LED Status |
-
-## Threshold
-```
-2000
-```
-
-## Output
-
-### DARK Environment
-- LED ON
-- Environment = DARK
-
-### BRIGHT Environment
-- LED OFF
-- Environment = BRIGHT
+---
 
 ## Project Files
 
@@ -64,7 +89,19 @@ The sensor value and device status are displayed on:
 - serial_monitor.png
 - blynk_web_dashboard.png
 - blynk_mobile_dashboard.png
+- demo.mp4 *(Optional)*
+
+---
+
+## Future Improvements
+
+- Push notifications for lighting events
+- Automatic brightness control using PWM
+- Data logging and analytics
+- Energy consumption monitoring
+
+---
 
 ## Author
 
-Shree Harshan
+**Shree Harshan K**
