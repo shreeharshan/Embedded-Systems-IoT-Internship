@@ -7,7 +7,6 @@ This repository contains the tasks completed during my **Embedded Systems & IoT 
 - 📁 Task-1 – Smart Temperature and Humidity Monitoring System
 - 📁 Task-2 – Automatic Light Detection System using ESP32 & LDR
 - 📁 Task-3 – IoT-Based Smart Automatic Lighting System using ESP32, LDR & Blynk Cloud
-- 📁 Task-4
 
 ## Technologies Used
 
